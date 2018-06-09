@@ -4,7 +4,6 @@ import pyautogui
 import random
 import time
 
-
 '''
 
 grabs a region (topx, topy, bottomx, bottomy)
@@ -123,11 +122,11 @@ the top left corner coordinates of the element if found as an array [x,y]
 
 '''
 def imagesearch_loop(image, timesample, prefix="", precision=0.8):
-    pos = imagesearch(prefix+image, precision)
+    pos = imagesearch(image, precision=precision, prefix=prefix)
     while pos[0] == -1:
         print(image+" not found, waiting")
         time.sleep(timesample)
-        pos = imagesearch(prefix+image, precision)
+        pos = imagesearch(image, precision=precision, prefix=prefix)
     return pos
 
 

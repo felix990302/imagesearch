@@ -5,7 +5,7 @@ from imagesearch import *
 
 # This is intended to be used as examples to be copy pasted, do not run the whole file at once
 
-pos = imagesearch("github.png", prefix="assets/tmp/")
+pos = imagesearch("github.png", prefix="assets/img/")
 if pos[0] != -1:
     print("position : ", pos[0], pos[1])
     pyautogui.moveTo(pos[0], pos[1])
@@ -13,15 +13,14 @@ else:
     print("image not found")
 
 # search for the github logo continuously :
-
-pos = imagesearch_loop("github.png", 0.5, prefix="assets/tmp/")
+# pos = imagesearch_loop("github.png", 0.5, prefix="assets/img/")
 
 print("image found ", pos[0], pos[1])
 
 # search for the logo on the 0,0,800,600 region
 #  (a rectangle starting from the top left going 800 pixels to the right and down 600 pixels)
 
-pos = imagesearcharea("github.png", 0, 0, 800, 600, prefix="assets/tmp/")
+pos = imagesearcharea("github.png", 0, 0, 800, 600, prefix="assets/img/")
 if pos[0] != -1:
     print("position : ", pos[0], pos[1])
     pyautogui.moveTo(pos[0], pos[1])
@@ -34,8 +33,8 @@ else:
 # non -optimized way :
 time1 = time.clock()
 for i in range(10):
-    imagesearcharea("github.png", 0, 0, 800, 600, prefix="assets/tmp/")
-    imagesearcharea("panda.png", 0, 0, 800, 600, prefix="assets/tmp/")
+    imagesearcharea("github.png", 0, 0, 800, 600, prefix="assets/img/")
+    imagesearcharea("panda.png", 0, 0, 800, 600, prefix="assets/img/")
 print(str(time.clock() - time1) + " seconds (non optimized)")
 
 # optimized way :
@@ -43,8 +42,8 @@ print(str(time.clock() - time1) + " seconds (non optimized)")
 time1 = time.clock()
 im = region_grabber((0, 0, 800, 600))
 for i in range(10):
-    imagesearcharea("github.png", 0, 0, 800, 600, 0.8, im, prefix="assets/tmp/")
-    imagesearcharea("panda.png", 0, 0, 800, 600, 0.8, im, prefix="assets/tmp/")
+    imagesearcharea("github.png", 0, 0, 800, 600, precision=0.8, im=im, prefix="assets/img/")
+    imagesearcharea("panda.png", 0, 0, 800, 600, precision=0.8, im=im, prefix="assets/img/")
 print(str(time.clock() - time1) + " seconds (optimized)")
 
 # sample output :
@@ -55,6 +54,6 @@ print(str(time.clock() - time1) + " seconds (optimized)")
 
 # click image is to be used after having found the image
 
-pos = imagesearch("github.png", prefix="assets/tmp/")
+pos = imagesearch("github.png", prefix="assets/img/")
 if pos[0] != -1:
-    click_image("github.png", pos, "right", 0.2, prefix="assets/tmp/", offset=5)
+    click_image("github.png", pos, "right", 0.2, prefix="assets/img/", offset=5)
