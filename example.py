@@ -1,4 +1,4 @@
-from imagesearch import *
+from pyimagesearch import *
 
 # Search for the github logo on the whole screen
 # note that the search only works on your primary screen.
