@@ -24,3 +24,6 @@ Windows :
 
 pip3 install -r requirements.txt
 
+### Competely Inadequate Tests
+
+try python3 example.py
