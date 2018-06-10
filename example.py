@@ -1,4 +1,6 @@
-from pyimagesearch import *
+from pyimagesearch import imagesearch, imagesearcharea, region_grabber, click_image
+import time
+import pyautogui
 
 # Search for the github logo on the whole screen
 # note that the search only works on your primary screen.
