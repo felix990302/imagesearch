@@ -1,6 +1,7 @@
 # DISCLAIMER
 
 this is a revision of https://github.com/drov0/python-imagesearch for use as a submodule in my project, all credits go to drov0
+My revision is structured so as to be suitable for inclusion as a sub-module
 
 ## Python-ImageSearch
 
