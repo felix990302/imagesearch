@@ -1,4 +1,4 @@
-from pyimagesearch import imagesearch, imagesearcharea, region_grabber, click_image
+from imagesearch import imagesearch, imagesearcharea, region_grabber, click_image
 import time
 import pyautogui
 
