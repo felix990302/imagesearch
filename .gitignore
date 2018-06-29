@@ -6,3 +6,5 @@ src/*
 
 *.swp
 *.swo
+
+run*.py
